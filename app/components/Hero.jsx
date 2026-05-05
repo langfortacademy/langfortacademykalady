@@ -58,10 +58,7 @@ export default function Hero() {
         <div className={styles.bgGrid} style={{ transform: `translateY(${scrollY * 0.2}px)` }}></div>
 
         {/* Content */}
-        <div 
-          className={`container ${styles.heroContainer}`}
-          style={{ transform: `translateY(${scrollY * 0.4}px)`, opacity: 1 - scrollY / 600 }}
-        >
+        <div className={`container ${styles.heroContainer}`}>
           <div className={styles.heroText}>
             <div className={`${styles.badge} ${styles.animItem}`}>
               <span className={styles.badgeDot}></span>
