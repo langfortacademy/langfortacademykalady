@@ -35,53 +35,32 @@ export default function ImageGallery() {
     return () => observer.disconnect();
   }, []);
 
+  const marqueeItems = [...galleryImages, ...galleryImages];
+
   return (
-    <>
-      <section className={styles.section} id="gallery" ref={sectionRef}>
-        <div className="container">
-          <div className={`${styles.header} ${styles.animItem}`}>
-            <p className={styles.sectionLabel}>Life at Langfort</p>
-            <h2 className="section-title">Campus Gallery</h2>
-            <p className="section-subtitle">
-              Take a glimpse into our vibrant campus, interactive classrooms, and the success stories of our students.
-            </p>
-          </div>
-
-          <div className={styles.galleryGrid}>
-            {galleryImages.map((img, i) => (
-              <div 
-                key={img.id} 
-                className={`${styles.imageWrap} ${styles[img.span]} ${styles.animItem}`}
-                style={{ transitionDelay: `${i * 0.1}s` }}
-                onClick={() => setSelectedImg(img.src)}
-              >
-                <img src={img.src} alt={img.alt} className={styles.image} loading="lazy" />
-                <div className={styles.overlay}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="11" cy="11" r="8" />
-                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                    <line x1="11" y1="8" x2="11" y2="14" />
-                    <line x1="8" y1="11" x2="14" y2="11" />
-                  </svg>
-                </div>
-              </div>
-            ))}
-          </div>
+    <section className={styles.section} id="gallery" ref={sectionRef}>
+      <div className="container">
+        <div className={`${styles.header} ${styles.animItem}`}>
+          <p className={styles.sectionLabel}>Life at Langfort</p>
+          <h2 className="section-title">Campus Gallery</h2>
+          <p className="section-subtitle">
+            Take a glimpse into our vibrant campus, interactive classrooms, and the success stories of our students.
+          </p>
         </div>
-      </section>
+      </div>
 
-      {/* Lightbox Modal */}
-      {selectedImg && (
-        <div className={styles.lightbox} onClick={() => setSelectedImg(null)}>
-          <button className={styles.closeBtn} onClick={() => setSelectedImg(null)} aria-label="Close image">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          </button>
-          <img src={selectedImg} alt="Enlarged view" className={styles.lightboxImg} onClick={(e) => e.stopPropagation()} />
+      <div className={styles.marqueeWrapper}>
+        <div className={styles.marqueeTrack}>
+          {marqueeItems.map((img, i) => (
+            <div 
+              key={`${img.id}-${i}`} 
+              className={styles.imageCard}
+            >
+              <img src={img.src} alt={img.alt} className={styles.image} loading="lazy" />
+            </div>
+          ))}
         </div>
-      )}
-    </>
+      </div>
+    </section>
   );
 }
