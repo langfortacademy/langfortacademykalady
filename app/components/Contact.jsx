@@ -232,6 +232,20 @@ export default function Contact() {
             </div>
           </div>
         </div>
+
+        {/* Map */}
+        <div className={`${styles.mapContainer} reveal`} style={{ transitionDelay: '0.3s' }}>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.8448542037754!2d76.4350407!3d10.167864400000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08074a08c7ea6f%3A0x7b280d4ac877707!2sLangFort%20Global%20Education%20Pvt.%20Ltd.!5e1!3m2!1sen!2sin!4v1778011051061!5m2!1sen!2sin" 
+            width="100%" 
+            height="400" 
+            style={{ border: 0 }} 
+            allowFullScreen="" 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Langfort Academy Location"
+          ></iframe>
+        </div>
       </div>
     </section>
   );
