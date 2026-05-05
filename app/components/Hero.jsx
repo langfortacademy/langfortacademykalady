@@ -59,65 +59,71 @@ export default function Hero() {
 
         {/* Content */}
         <div 
-          className={`container ${styles.heroContent}`}
+          className={`container ${styles.heroContainer}`}
           style={{ transform: `translateY(${scrollY * 0.4}px)`, opacity: 1 - scrollY / 600 }}
         >
-          <div className={`${styles.badge} ${styles.animItem}`}>
-            <span className={styles.badgeDot}></span>
-            <span>Now Enrolling for 2026–2027 Batches</span>
+          <div className={styles.heroText}>
+            <div className={`${styles.badge} ${styles.animItem}`}>
+              <span className={styles.badgeDot}></span>
+              <span>Now Enrolling for 2026–2027 Batches</span>
+            </div>
+
+            <h1 className={`${styles.headline} ${styles.animItem}`}>
+              One-stop solution for all your{' '}
+              <span className={styles.headlineGradient}>international study</span>{' '}
+              needs.
+            </h1>
+
+            <p className={`${styles.subheadline} ${styles.animItem}`}>
+              Your passport to the world of opportunities. Master IELTS, OET, PTE &amp; German with expert trainers at Kerala&apos;s most trusted language academy.
+            </p>
+
+            <div className={`${styles.ctaGroup} ${styles.animItem}`}>
+              <a href="#programs" className="btn btn-primary btn-lg">
+                <span>Explore Courses</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <button
+                className={`btn btn-secondary btn-lg ${styles.videoBtn}`}
+                onClick={() => setIsVideoModalOpen(true)}
+                id="watch-video-btn"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none" />
+                </svg>
+                <span>Watch Orientation Video</span>
+              </button>
+            </div>
+
+            {/* Stats */}
+            <div className={`${styles.stats} ${styles.animItem}`}>
+              <div className={styles.stat}>
+                <span className={styles.statNumber}>5000+</span>
+                <span className={styles.statLabel}>Students Trained</span>
+              </div>
+              <div className={styles.statDivider}></div>
+              <div className={styles.stat}>
+                <span className={styles.statNumber}>15+</span>
+                <span className={styles.statLabel}>Expert Trainers</span>
+              </div>
+              <div className={styles.statDivider}></div>
+              <div className={styles.stat}>
+                <span className={styles.statNumber}>95%</span>
+                <span className={styles.statLabel}>Success Rate</span>
+              </div>
+              <div className={styles.statDivider}></div>
+              <div className={styles.stat}>
+                <span className={styles.statNumber}>10+</span>
+                <span className={styles.statLabel}>Years of Excellence</span>
+              </div>
+            </div>
           </div>
-
-          <h1 className={`${styles.headline} ${styles.animItem}`}>
-            One-stop solution for all your{' '}
-            <span className={styles.headlineGradient}>international study</span>{' '}
-            needs.
-          </h1>
-
-          <p className={`${styles.subheadline} ${styles.animItem}`}>
-            Your passport to the world of opportunities. Master IELTS, OET, PTE &amp; German with expert trainers at Kerala&apos;s most trusted language academy.
-          </p>
-
-          <div className={`${styles.ctaGroup} ${styles.animItem}`}>
-            <a href="#programs" className="btn btn-primary btn-lg">
-              <span>Explore Courses</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-            <button
-              className={`btn btn-secondary btn-lg ${styles.videoBtn}`}
-              onClick={() => setIsVideoModalOpen(true)}
-              id="watch-video-btn"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none" />
-              </svg>
-              <span>Watch Orientation Video</span>
-            </button>
-          </div>
-
-          {/* Stats */}
-          <div className={`${styles.stats} ${styles.animItem}`}>
-            <div className={styles.stat}>
-              <span className={styles.statNumber}>5000+</span>
-              <span className={styles.statLabel}>Students Trained</span>
-            </div>
-            <div className={styles.statDivider}></div>
-            <div className={styles.stat}>
-              <span className={styles.statNumber}>15+</span>
-              <span className={styles.statLabel}>Expert Trainers</span>
-            </div>
-            <div className={styles.statDivider}></div>
-            <div className={styles.stat}>
-              <span className={styles.statNumber}>95%</span>
-              <span className={styles.statLabel}>Success Rate</span>
-            </div>
-            <div className={styles.statDivider}></div>
-            <div className={styles.stat}>
-              <span className={styles.statNumber}>10+</span>
-              <span className={styles.statLabel}>Years of Excellence</span>
-            </div>
+          
+          <div className={`${styles.heroImageWrap} ${styles.animItem}`}>
+            <img src="/hero-student.png" alt="Student" className={styles.heroImage} />
           </div>
         </div>
 
