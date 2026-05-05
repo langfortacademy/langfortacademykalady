@@ -2,20 +2,41 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 1000px;
-  height: 1000px;
-  background: radial-gradient(circle, rgba(15, 43, 91, 0.08) 0%, rgba(37, 99, 235, 0.04) 30%, rgba(139, 92, 246, 0.02) 50%, transparent 70%);
-  border-radius: 50%;
+  width: 500px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 200px;
   pointer-events: none;
   z-index: 0; /* Keeps it behind all content */
   will-change: transform;
-  mix-blend-mode: multiply; /* Gives a classy depth effect */
+  filter: blur(60px); /* Makes it look like a soft, fluffy cloud */
   animation: pulseGlow 8s ease-in-out infinite alternate;
 }
 
+.bgGlow::before, .bgGlow::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+
+.bgGlow::before {
+  width: 250px;
+  height: 250px;
+  top: -100px;
+  left: 70px;
+}
+
+.bgGlow::after {
+  width: 200px;
+  height: 200px;
+  top: -60px;
+  right: 70px;
+}
+
 @keyframes pulseGlow {
-  0% { opacity: 0.6; filter: blur(0px); }
-  100% { opacity: 1; filter: blur(10px); }
+  0% { opacity: 0.6; transform: scale(1); filter: blur(60px); }
+  100% { opacity: 0.8; transform: scale(1.05); filter: blur(70px); }
 }
 
 /* Fallback for devices without hover capability */

@@ -6,13 +6,23 @@ import styles from './Hero.module.css';
 export default function Hero() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const heroRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
+    
+    const handleMouseMove = (e) => {
+      // Normalize from -1 to 1 based on window center
+      const x = (e.clientX / window.innerWidth - 0.5) * 2;
+      const y = (e.clientY / window.innerHeight - 0.5) * 2;
+      setMousePos({ x, y });
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -30,6 +40,7 @@ export default function Hero() {
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousemove', handleMouseMove);
       observer.disconnect();
     };
   }, []);
@@ -40,9 +51,9 @@ export default function Hero() {
         {/* Animated background */}
         <div className={styles.bgGradient}></div>
         <div className={styles.bgOrbs}>
-          <div className={`${styles.orb} ${styles.orb1}`}></div>
-          <div className={`${styles.orb} ${styles.orb2}`}></div>
-          <div className={`${styles.orb} ${styles.orb3}`}></div>
+          <div className={`${styles.cloud} ${styles.cloud1}`} style={{ transform: `translate(${mousePos.x * -80}px, ${scrollY * 0.1 + mousePos.y * -80}px)` }}></div>
+          <div className={`${styles.cloud} ${styles.cloud2}`} style={{ transform: `translate(${mousePos.x * 120}px, ${scrollY * 0.2 + mousePos.y * 120}px)` }}></div>
+          <div className={`${styles.cloud} ${styles.cloud3}`} style={{ transform: `translate(${mousePos.x * -160}px, ${scrollY * 0.3 + mousePos.y * -160}px)` }}></div>
         </div>
         <div className={styles.bgGrid} style={{ transform: `translateY(${scrollY * 0.2}px)` }}></div>
 

@@ -25,39 +25,49 @@
   overflow: hidden;
 }
 
-.orb {
+.cloud {
   position: absolute;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 200px;
+  filter: blur(30px);
+  will-change: transform;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cloud::before, .cloud::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.6; /* Increased opacity for light mode to be visible */
 }
 
-.orb1 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.2), transparent); /* Light blue */
-  top: -10%;
-  right: -5%;
-  animation: float 8s ease-in-out infinite;
-}
-
-.orb2 {
+.cloud1 {
   width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.15), transparent); /* Sky blue */
-  bottom: -10%;
-  left: -5%;
-  animation: float 10s ease-in-out infinite reverse;
+  height: 150px;
+  top: 10%;
+  right: 5%;
 }
+.cloud1::before { width: 200px; height: 200px; top: -80px; left: 50px; }
+.cloud1::after { width: 150px; height: 150px; top: -50px; right: 50px; }
 
-.orb3 {
+.cloud2 {
   width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.1), transparent); /* Soft amber */
-  top: 40%;
-  left: 30%;
-  animation: float 12s ease-in-out infinite 2s;
+  height: 120px;
+  top: 50%;
+  left: 10%;
 }
+.cloud2::before { width: 150px; height: 150px; top: -60px; left: 40px; }
+.cloud2::after { width: 120px; height: 120px; top: -40px; right: 40px; }
+
+.cloud3 {
+  width: 500px;
+  height: 200px;
+  bottom: -10%;
+  right: 20%;
+  opacity: 0.5;
+}
+.cloud3::before { width: 250px; height: 250px; top: -100px; left: 80px; }
+.cloud3::after { width: 180px; height: 180px; top: -80px; right: 80px; }
 
 /* Grid overlay - Light Theme */
 .bgGrid {

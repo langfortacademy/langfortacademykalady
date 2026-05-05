@@ -6,7 +6,7 @@
   z-index: var(--z-sticky);
   padding: var(--space-4) 0;
   transition: all var(--transition-base);
-  background: var(--color-primary);
+  background: linear-gradient(to bottom, rgba(15, 43, 91, 0.6) 0%, transparent 100%);
 }
 
 .scrolled {
