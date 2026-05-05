@@ -39,7 +39,7 @@ export default function Navbar() {
         {/* Desktop Links */}
         <ul className={styles.navLinks}>
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <li key={link.label}>
               <a href={link.href} className={styles.navLink}>
                 {link.label}
               </a>
@@ -79,7 +79,7 @@ export default function Navbar() {
       <div className={`${styles.mobileMenu} ${mobileOpen ? styles.mobileMenuOpen : ''}`}>
         <ul className={styles.mobileLinks}>
           {navLinks.map((link, i) => (
-            <li key={link.href} style={{ animationDelay: `${i * 0.06}s` }}>
+            <li key={link.label} style={{ animationDelay: `${i * 0.06}s` }}>
               <a
                 href={link.href}
                 className={styles.mobileLink}
