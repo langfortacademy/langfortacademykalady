@@ -3,14 +3,14 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './ImageGallery.module.css';
 
-// Placeholder images for the gallery. The user can replace these URLs with their actual images later.
+// Replace these with your actual images by saving them in the `public` folder
 const galleryImages = [
-  { id: 1, src: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop', alt: 'Students studying together', span: 'large' },
-  { id: 2, src: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=800&auto=format&fit=crop', alt: 'Classroom session', span: 'tall' },
-  { id: 3, src: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop', alt: 'Language lab', span: 'regular' },
-  { id: 4, src: 'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?q=80&w=800&auto=format&fit=crop', alt: 'Group discussion', span: 'wide' },
-  { id: 5, src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop', alt: 'Graduation celebration', span: 'regular' },
-  { id: 6, src: 'https://images.unsplash.com/photo-1427504494785-319cecb4ceee?q=80&w=800&auto=format&fit=crop', alt: 'Campus view', span: 'large' },
+  { id: 1, src: '/gallery-1.jpg', alt: 'Langfort Campus 1' },
+  { id: 2, src: '/gallery-2.jpg', alt: 'Langfort Campus 2' },
+  { id: 3, src: '/gallery-3.jpg', alt: 'Langfort Campus 3' },
+  { id: 4, src: '/gallery-4.jpg', alt: 'Langfort Campus 4' },
+  { id: 5, src: '/gallery-5.jpg', alt: 'Langfort Campus 5' },
+  { id: 6, src: '/gallery-6.jpg', alt: 'Langfort Campus 6' },
 ];
 
 export default function ImageGallery() {
