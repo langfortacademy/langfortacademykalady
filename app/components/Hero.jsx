@@ -65,22 +65,22 @@ export default function Hero() {
           <div className={styles.heroText}>
             <div className={`${styles.badge} ${styles.animItem}`}>
               <span className={styles.badgeDot}></span>
-              <span>Now Enrolling for 2026–2027 Batches</span>
+              <span>GLOBAL EDUCATION</span>
             </div>
 
             <h1 className={`${styles.headline} ${styles.animItem}`}>
-              One-stop solution for all your{' '}
-              <span className={styles.headlineGradient}>international study</span>{' '}
-              needs.
+              Empower Your <br />
+              <span className={styles.headlineHighlight}>Future</span> <br />
+              With Langfort.
             </h1>
 
             <p className={`${styles.subheadline} ${styles.animItem}`}>
-              Your passport to the world of opportunities. Master IELTS, OET, PTE &amp; German with expert trainers at Kerala&apos;s most trusted language academy.
+              Your premium passport to global excellence and international opportunities.
             </p>
 
             <div className={`${styles.ctaGroup} ${styles.animItem}`}>
               <a href="#programs" className="btn btn-primary btn-lg">
-                <span>Explore Courses</span>
+                <span>EXPLORE COURSES</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
@@ -89,11 +89,13 @@ export default function Hero() {
                 className={`btn btn-secondary btn-lg ${styles.videoBtn}`}
                 onClick={() => setIsVideoModalOpen(true)}
                 id="watch-video-btn"
+                style={{ display: 'flex', alignItems: 'center', gap: '12px' }}
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none" />
-                </svg>
+                <div className={styles.playIconWrap}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </div>
                 <span>Watch Orientation Video</span>
               </button>
             </div>

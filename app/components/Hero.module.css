@@ -151,14 +151,15 @@
   padding: var(--space-2) var(--space-5);
   font-size: var(--font-size-sm);
   font-weight: 600;
-  color: var(--color-primary);
+  color: #007bff;
   box-shadow: var(--shadow-sm);
+  letter-spacing: 1px;
 }
 
 .badgeDot {
   width: 8px;
   height: 8px;
-  background: #22c55e;
+  background: #007bff;
   border-radius: 50%;
   animation: pulse 2s ease-in-out infinite;
 }
@@ -167,19 +168,27 @@
 .headline {
   font-size: clamp(2.2rem, 5.5vw, 4.5rem);
   font-weight: 800;
-  color: var(--color-text); /* Dark text */
+  color: #111827; /* Dark text */
   line-height: 1.1;
   letter-spacing: -0.04em;
   max-width: 900px;
 }
 
-.headlineGradient {
-  background: linear-gradient(135deg, #0f2b5b, #2563eb, #0f2b5b); /* Blue gradient */
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmer 4s linear infinite;
+.headlineHighlight {
+  color: #007bff; /* Bright blue */
+  font-style: italic;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.playIconWrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #e0f2fe; /* Light blue */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0284c7; /* Darker blue icon */
 }
 
 /* Subheadline - Light Theme */
