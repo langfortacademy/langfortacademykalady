@@ -1,13 +1,11 @@
 .hero {
-  position: sticky;
-  top: 0;
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 120px 0 80px;
   background-color: transparent;
-  z-index: 0;
 }
 
 /* Animated gradient background - Light Theme */
