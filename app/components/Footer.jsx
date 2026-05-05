@@ -6,7 +6,7 @@ export default function Footer() {
   const quickLinks = [
     { label: 'Home', href: '#hero' },
     { label: 'Programs', href: '#programs' },
-    { label: 'OET Packages', href: '#oet-packages' },
+    { label: 'Overseas', href: '#contact' },
     { label: 'Videos', href: '#videos' },
     { label: 'Testimonials', href: '#testimonials' },
     { label: 'Contact', href: '#contact' },
@@ -17,7 +17,7 @@ export default function Footer() {
     { label: 'OET Training', href: '#programs' },
     { label: 'PTE Preparation', href: '#programs' },
     { label: 'German Language', href: '#programs' },
-    { label: 'OET Online Classes', href: '#oet-packages' },
+    { label: 'Spoken English', href: '#programs' },
   ];
 
   return (

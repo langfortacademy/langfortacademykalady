@@ -27,7 +27,7 @@ export default function Navbar() {
   const navLinks = [
     { label: 'Home', href: '#hero' },
     { label: 'Programs', href: '#programs' },
-    { label: 'OET Packages', href: '#oet-packages' },
+    { label: 'Overseas', href: '#contact' },
     { label: 'Videos', href: '#videos' },
     { label: 'Testimonials', href: '#testimonials' },
     { label: 'Contact', href: '#contact' },
