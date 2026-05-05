@@ -53,7 +53,17 @@ export default function ImageGallery() {
         <div className={styles.marqueeTrack}>
           {marqueeItems.map((img, i) => (
             <div 
-              key={`${img.id}-${i}`} 
+              key={`row1-${img.id}-${i}`} 
+              className={styles.imageCard}
+            >
+              <img src={img.src} alt={img.alt} className={styles.image} loading="lazy" />
+            </div>
+          ))}
+        </div>
+        <div className={styles.marqueeTrackReverse}>
+          {[...marqueeItems].reverse().map((img, i) => (
+            <div 
+              key={`row2-${img.id}-${i}`} 
               className={styles.imageCard}
             >
               <img src={img.src} alt={img.alt} className={styles.image} loading="lazy" />

@@ -49,13 +49,27 @@
   width: max-content;
 }
 
-.marqueeTrack:hover {
+.marqueeTrackReverse {
+  display: flex;
+  gap: var(--space-6);
+  animation: marqueeReverse 40s linear infinite;
+  width: max-content;
+  margin-top: var(--space-6);
+}
+
+.marqueeTrack:hover,
+.marqueeTrackReverse:hover {
   animation-play-state: paused;
 }
 
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeReverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
 /* Image Card */
