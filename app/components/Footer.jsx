@@ -84,7 +84,9 @@ export default function Footer() {
         <div className={styles.bottomBar}>
           <p>&copy; {currentYear} Langfort International Academy. All rights reserved.</p>
           <p className={styles.madeWith}>
-            Made with ❤️ in Kerala, India
+            <a href="https://wa.me/+919188840291/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
+              Made with CREON
+            </a>
           </p>
         </div>
       </div>
