@@ -16,8 +16,8 @@
   width: 80px;
   height: auto;
   animation: runAcross 20s linear infinite;
-  /* If the image has a white background, you can uncomment the next line to blend it with light backgrounds */
-  /* mix-blend-mode: multiply; */
+  /* Use multiply to remove the solid white background */
+  mix-blend-mode: multiply;
 }
 
 .characterImg {
