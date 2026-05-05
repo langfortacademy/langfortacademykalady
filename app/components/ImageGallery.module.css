@@ -42,34 +42,30 @@
   padding: var(--space-4) 0;
 }
 
-.marqueeTrack {
-  display: flex;
-  gap: var(--space-6);
-  animation: marquee 80s linear infinite;
-  width: max-content;
-}
-
+.marqueeTrack,
 .marqueeTrackReverse {
   display: flex;
   gap: var(--space-6);
-  animation: marqueeReverse 80s linear infinite;
-  width: max-content;
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.marqueeTrackReverse {
   margin-top: var(--space-6);
 }
 
-.marqueeTrack:hover,
-.marqueeTrackReverse:hover {
-  animation-play-state: paused;
+.marqueeTrack::-webkit-scrollbar,
+.marqueeTrackReverse::-webkit-scrollbar {
+  display: none;
 }
 
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-@keyframes marqueeReverse {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+.marqueeGroup {
+  display: flex;
+  gap: var(--space-6);
+  flex-shrink: 0;
 }
 
 /* Image Card */

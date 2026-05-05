@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import styles from './ImageGallery.module.css';
+import { useAutoScroll } from '../hooks/useAutoScroll';
 
 // Replace these with your actual images by saving them in the `public` folder
 const galleryImages = [
@@ -41,7 +42,8 @@ export default function ImageGallery() {
     return () => observer.disconnect();
   }, []);
 
-  const marqueeItems = [...galleryImages, ...galleryImages];
+  const { scrollRef: topRef, handlers: topHandlers } = useAutoScroll(1, 'left');
+  const { scrollRef: bottomRef, handlers: bottomHandlers } = useAutoScroll(1, 'right');
 
   return (
     <section className={styles.section} id="gallery" ref={sectionRef}>
@@ -56,25 +58,38 @@ export default function ImageGallery() {
       </div>
 
       <div className={styles.marqueeWrapper}>
-        <div className={styles.marqueeTrack}>
-          {marqueeItems.map((img, i) => (
-            <div 
-              key={`row1-${img.id}-${i}`} 
-              className={styles.imageCard}
-            >
-              <img src={img.src} alt={img.alt} className={styles.image} loading="lazy" />
-            </div>
-          ))}
+        <div className={styles.marqueeTrack} ref={topRef} {...topHandlers}>
+          <div className={styles.marqueeGroup}>
+            {galleryImages.map((img, i) => (
+              <div key={`group1-top-${img.id}-${i}`} className={styles.imageCard}>
+                <img src={img.src} alt={img.alt} className={styles.image} loading="lazy" />
+              </div>
+            ))}
+          </div>
+          <div className={styles.marqueeGroup} aria-hidden="true">
+            {galleryImages.map((img, i) => (
+              <div key={`group2-top-${img.id}-${i}`} className={styles.imageCard}>
+                <img src={img.src} alt={img.alt} className={styles.image} loading="lazy" />
+              </div>
+            ))}
+          </div>
         </div>
-        <div className={styles.marqueeTrackReverse}>
-          {[...marqueeItems].reverse().map((img, i) => (
-            <div 
-              key={`row2-${img.id}-${i}`} 
-              className={styles.imageCard}
-            >
-              <img src={img.src} alt={img.alt} className={styles.image} loading="lazy" />
-            </div>
-          ))}
+
+        <div className={styles.marqueeTrackReverse} ref={bottomRef} {...bottomHandlers}>
+          <div className={styles.marqueeGroup}>
+            {[...galleryImages].reverse().map((img, i) => (
+              <div key={`group1-bottom-${img.id}-${i}`} className={styles.imageCard}>
+                <img src={img.src} alt={img.alt} className={styles.image} loading="lazy" />
+              </div>
+            ))}
+          </div>
+          <div className={styles.marqueeGroup} aria-hidden="true">
+            {[...galleryImages].reverse().map((img, i) => (
+              <div key={`group2-bottom-${img.id}-${i}`} className={styles.imageCard}>
+                <img src={img.src} alt={img.alt} className={styles.image} loading="lazy" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -29,17 +29,21 @@
 .marqueeTrack {
   display: flex;
   gap: var(--space-6);
-  animation: marquee 30s linear infinite;
-  width: max-content;
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.marqueeTrack:hover {
-  animation-play-state: paused;
+.marqueeTrack::-webkit-scrollbar {
+  display: none;
 }
 
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.marqueeGroup {
+  display: flex;
+  gap: var(--space-6);
+  flex-shrink: 0;
 }
 
 /* Video card */

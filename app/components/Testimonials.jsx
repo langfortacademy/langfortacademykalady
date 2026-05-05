@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import styles from './Testimonials.module.css';
+import { useAutoScroll } from '../hooks/useAutoScroll';
 
 const testimonials = [
   {
@@ -75,7 +76,7 @@ export default function Testimonials() {
     return () => observer.disconnect();
   }, []);
 
-  const marqueeItems = [...testimonials, ...testimonials];
+  const { scrollRef, handlers } = useAutoScroll(1, 'left');
 
   return (
     <section className={styles.section} id="testimonials" ref={sectionRef}>
@@ -116,36 +117,74 @@ export default function Testimonials() {
 
       {/* Auto Scroll Marquee */}
       <div className={styles.marqueeWrapper}>
-        <div className={styles.marqueeTrack}>
-          {marqueeItems.map((t, i) => (
-            <div key={`${t.name}-${i}`} className={styles.testimonialCard}>
-              <div className={styles.stars}>
-                {[1, 2, 3, 4, 5].map((starIndex) => {
-                  let fill = '#e5e7eb'; // Empty star color
-                  if (t.rating >= starIndex) {
-                    fill = '#f59e0b'; // Full star color
-                  } else if (t.rating >= starIndex - 0.5) {
-                    fill = 'url(#halfStarGrad)'; // Half star gradient
-                  }
-                  return (
-                    <svg key={starIndex} width="16" height="16" viewBox="0 0 24 24" fill={fill} stroke="none">
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                    </svg>
-                  );
-                })}
-              </div>
-              <p className={styles.testimonialText}>&ldquo;{t.text}&rdquo;</p>
-              <div className={styles.testimonialAuthor}>
-                <div className={styles.avatar}>
-                  {t.name.split(' ').map(n => n[0]).join('')}
+        <div 
+          className={styles.marqueeTrack}
+          ref={scrollRef}
+          {...handlers}
+        >
+          <div className={styles.marqueeGroup}>
+            {testimonials.map((t, i) => (
+              <div key={`group1-${t.name}-${i}`} className={styles.testimonialCard}>
+                <div className={styles.stars}>
+                  {[1, 2, 3, 4, 5].map((starIndex) => {
+                    let fill = '#e5e7eb'; // Empty star color
+                    if (t.rating >= starIndex) {
+                      fill = '#f59e0b'; // Full star color
+                    } else if (t.rating >= starIndex - 0.5) {
+                      fill = 'url(#halfStarGrad)'; // Half star gradient
+                    }
+                    return (
+                      <svg key={starIndex} width="16" height="16" viewBox="0 0 24 24" fill={fill} stroke="none">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                      </svg>
+                    );
+                  })}
                 </div>
-                <div>
-                  <div className={styles.authorName}>{t.name}</div>
-                  <div className={styles.authorRole}>{t.role}</div>
+                <p className={styles.testimonialText}>&ldquo;{t.text}&rdquo;</p>
+                <div className={styles.testimonialAuthor}>
+                  <div className={styles.avatar}>
+                    {t.name.split(' ').map(n => n[0]).join('')}
+                  </div>
+                  <div>
+                    <div className={styles.authorName}>{t.name}</div>
+                    <div className={styles.authorRole}>{t.role}</div>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <div className={styles.marqueeGroup} aria-hidden="true">
+            {testimonials.map((t, i) => (
+              <div key={`group2-${t.name}-${i}`} className={styles.testimonialCard}>
+                <div className={styles.stars}>
+                  {[1, 2, 3, 4, 5].map((starIndex) => {
+                    let fill = '#e5e7eb'; // Empty star color
+                    if (t.rating >= starIndex) {
+                      fill = '#f59e0b'; // Full star color
+                    } else if (t.rating >= starIndex - 0.5) {
+                      fill = 'url(#halfStarGrad)'; // Half star gradient
+                    }
+                    return (
+                      <svg key={starIndex} width="16" height="16" viewBox="0 0 24 24" fill={fill} stroke="none">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                      </svg>
+                    );
+                  })}
+                </div>
+                <p className={styles.testimonialText}>&ldquo;{t.text}&rdquo;</p>
+                <div className={styles.testimonialAuthor}>
+                  <div className={styles.avatar}>
+                    {t.name.split(' ').map(n => n[0]).join('')}
+                  </div>
+                  <div>
+                    <div className={styles.authorName}>{t.name}</div>
+                    <div className={styles.authorRole}>{t.role}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
