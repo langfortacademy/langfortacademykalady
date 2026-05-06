@@ -270,14 +270,22 @@
 .headline {
   font-size: clamp(2.2rem, 5.5vw, 4.5rem);
   font-weight: 800;
-  color: #111827; /* Dark text */
+  background: linear-gradient(135deg, #0f2b5b 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
   line-height: 1.1;
   letter-spacing: -0.04em;
   max-width: 900px;
 }
 
 .headlineHighlight {
-  color: #007bff; /* Bright blue */
+  background: linear-gradient(135deg, #1e40af 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
   font-style: italic;
   font-family: 'Playfair Display', Georgia, serif;
 }
