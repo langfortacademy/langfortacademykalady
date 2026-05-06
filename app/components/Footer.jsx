@@ -72,7 +72,16 @@ export default function Footer() {
               <p>Above Bank of Baroda, SNDP Building</p>
               <p>Near Kalady Panchayat, MC Road</p>
               <p>Kalady, Kerala, India</p>
-              <br />
+              
+              <div className={styles.branchesSection}>
+                <h5 className={styles.branchesTitle}>Our Branches</h5>
+                <ul className={styles.branchesList}>
+                  <li>Kalady</li>
+                  <li>Kaloor</li>
+                  <li>Thodupuzha</li>
+                </ul>
+              </div>
+
               <p><a href="tel:+919383448172">+91 9383448172</a></p>
               <p><a href="tel:+919048692086">+91 9048692086</a></p>
               <p><a href="mailto:langfortacademy@gmail.com">langfortacademy@gmail.com</a></p>
