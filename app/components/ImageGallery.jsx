@@ -48,7 +48,7 @@ export default function ImageGallery() {
   return (
     <section className={styles.section} id="gallery" ref={sectionRef}>
       <div className="container">
-        <div className={`${styles.header} ${styles.animItem}`}>
+        <div className={`${styles.header} reveal reveal-up`}>
           <p className={styles.sectionLabel}>Life at Langfort</p>
           <h2 className="section-title">Campus Gallery</h2>
           <p className="section-subtitle">
@@ -61,7 +61,7 @@ export default function ImageGallery() {
         <div className={styles.marqueeTrack} ref={topRef} {...topHandlers}>
           <div className={styles.marqueeGroup}>
             {galleryImages.map((img, i) => (
-              <div key={`group1-top-${img.id}-${i}`} className={styles.imageCard}>
+              <div key={`group1-top-${img.id}-${i}`} className={`${styles.imageCard} reveal reveal-zoom`} style={{ transitionDelay: `${i * 0.05}s` }}>
                 <img src={img.src} alt={img.alt} className={styles.image} loading="lazy" />
               </div>
             ))}

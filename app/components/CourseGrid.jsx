@@ -11,8 +11,8 @@ const courses = [
     description:
       'Best language institute with periodic classes from Fr. Joseph Puthussery from Germany and qualified trainers. From A1 beginners to advanced levels.',
     features: ['A1 to C2 Levels', 'Native Trainers', 'Goethe Exam Prep', 'Cultural Immersion'],
-    color: '#ef4444',
-    gradient: 'linear-gradient(135deg, #ef4444, #f87171)',
+    color: '#0f2b5b',
+    gradient: 'linear-gradient(135deg, #0f2b5b, #2563eb)',
   },
   {
     icon: '🌍',
@@ -21,8 +21,8 @@ const courses = [
     description:
       'The International English Language Testing System designed to assess language proficiency for study or work. Comprehensive coaching with mock tests and personalized feedback.',
     features: ['Academic & General Training', 'Band 7+ Strategy', 'Mock Tests Included', 'Flexible Batches'],
-    color: '#2563eb',
-    gradient: 'linear-gradient(135deg, #2563eb, #3b82f6)',
+    color: '#0f2b5b',
+    gradient: 'linear-gradient(135deg, #0f2b5b, #2563eb)',
   },
   {
     icon: '💻',
@@ -31,8 +31,8 @@ const courses = [
     description:
       'Fast, computer-based English tests trusted globally. Get results in just 2 days with our proven preparation methodology and advanced AI-powered practice tools.',
     features: ['Computer-Based Practice', '2-Day Results', 'AI Scoring Practice', 'Score Guarantee'],
-    color: '#8b5cf6',
-    gradient: 'linear-gradient(135deg, #8b5cf6, #a78bfa)',
+    color: '#0f2b5b',
+    gradient: 'linear-gradient(135deg, #0f2b5b, #2563eb)',
   },
   {
     icon: '🩺',
@@ -41,8 +41,8 @@ const courses = [
     description:
       'Specialized training for healthcare professionals. Choose from tailored pathways for Beginners and Repeaters, and explore our tiered packages (Ruby to Premium) offering mock tests, live sessions, and expert doctor trainers.',
     features: ['Beginner & Repeater Paths', 'Ruby to Platinum Packs', 'Expert Doctor Trainers', 'Score Guarantee'],
-    color: '#10b981',
-    gradient: 'linear-gradient(135deg, #10b981, #34d399)',
+    color: '#0f2b5b',
+    gradient: 'linear-gradient(135deg, #0f2b5b, #2563eb)',
   },
   {
     icon: '🗣️',
@@ -51,8 +51,8 @@ const courses = [
     description:
       'Master the art of confident communication. Tailored modules for beginners to advanced learners to improve vocabulary, pronunciation, and public speaking skills.',
     features: ['Interactive Sessions', 'Accent Neutralization', 'Grammar Fundamentals', 'Group Discussions'],
-    color: '#f59e0b',
-    gradient: 'linear-gradient(135deg, #f59e0b, #fbbf24)',
+    color: '#0f2b5b',
+    gradient: 'linear-gradient(135deg, #0f2b5b, #2563eb)',
   },
 ];
 
@@ -80,7 +80,7 @@ export default function CourseGrid() {
   return (
     <section className={styles.section} id="programs" ref={sectionRef}>
       <div className="container">
-        <div className="reveal">
+        <div className="reveal reveal-up">
           <p className={styles.sectionLabel}>Our Core Programs</p>
           <h2 className="section-title">Master the Language, Unlock the World</h2>
           <p className="section-subtitle">
@@ -92,8 +92,12 @@ export default function CourseGrid() {
           {courses.map((course, i) => (
             <div
               key={course.title}
-              className={`${styles.card} reveal`}
-              style={{ transitionDelay: `${i * 0.1}s` }}
+              className={`${styles.card} reveal ${i % 2 === 0 ? 'reveal-left' : 'reveal-right'}`}
+              style={{ 
+                transitionDelay: `${i * 0.1}s`,
+                '--theme-color': course.color,
+                '--theme-gradient': course.gradient
+              }}
             >
               {/* Accent border top */}
               <div className={styles.cardAccent} style={{ background: course.gradient }}></div>

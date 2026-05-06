@@ -10,8 +10,8 @@
   --color-primary-light: #1e40af;
   --color-primary-dark: #1e3a8a;
   --color-secondary: #2563eb;
-  --color-accent: #f59e0b;
-  --color-accent-hover: #d97706;
+  --color-accent: #3b82f6;
+  --color-accent-hover: #2563eb;
 
   /* Neutral Palette - Light/White */
   --color-bg: #ffffff;
@@ -27,7 +27,7 @@
 
   /* Gradients */
   --gradient-hero: linear-gradient(135deg, #f0f4ff 0%, #ffffff 50%, #e0e7ff 100%);
-  --gradient-accent: linear-gradient(135deg, #f59e0b, #ef4444);
+  --gradient-accent: linear-gradient(135deg, #3b82f6, #0f2b5b);
   --gradient-card: linear-gradient(145deg, #ffffff, #f8fafc);
   --gradient-cta: linear-gradient(135deg, #0f2b5b 0%, #1e40af 100%);
   --gradient-blue: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
@@ -374,17 +374,45 @@ input, textarea {
   animation: slideInRight 0.8s ease-out forwards;
 }
 
-/* --- Scroll Reveal --- */
+/* --- Scroll Progress Bar --- */
+.scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(to right, #0f2b5b, #3b82f6);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* --- Scroll Reveal Variants --- */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+  transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
+
+.reveal-up { transform: translateY(40px); }
+.reveal-down { transform: translateY(-40px); }
+.reveal-left { transform: translateX(-40px); }
+.reveal-right { transform: translateX(40px); }
+.reveal-zoom { transform: scale(0.94); }
+.reveal-blur { filter: blur(10px); }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(0, 0) scale(1);
+  filter: blur(0);
 }
+
+/* Delay helpers */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {

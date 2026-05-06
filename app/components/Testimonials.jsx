@@ -82,7 +82,7 @@ export default function Testimonials() {
     <section className={styles.section} id="testimonials" ref={sectionRef}>
       <div className="container">
         {/* Quote block */}
-        <div className={`${styles.quoteBlock} reveal`}>
+        <div className={`${styles.quoteBlock} reveal reveal-zoom`}>
           <div className={styles.quoteIcon}>
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="url(#quoteGrad)" strokeWidth="1.5">
               <defs>
@@ -106,7 +106,7 @@ export default function Testimonials() {
         </div>
 
         {/* Section header */}
-        <div className="reveal" style={{ marginTop: 'var(--space-20)' }}>
+        <div className="reveal reveal-up" style={{ marginTop: 'var(--space-20)' }}>
           <p className={styles.sectionLabel}>What Our Students Say</p>
           <h2 className="section-title">Student Testimonials</h2>
           <p className="section-subtitle">

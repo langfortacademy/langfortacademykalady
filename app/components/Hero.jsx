@@ -59,7 +59,7 @@ export default function Hero() {
 
         {/* Content */}
         <div className={`container ${styles.heroContainer}`}>
-          <div className={styles.heroText}>
+          <div className={`${styles.heroText} reveal reveal-zoom`}>
             <div className={`${styles.badge} ${styles.animItem}`}>
               <span className={styles.badgeDot}></span>
               <span>GLOBAL EDUCATION</span>
@@ -122,7 +122,27 @@ export default function Hero() {
           </div>
           
           <div className={`${styles.heroImageWrap} ${styles.animItem}`}>
-            <img src="/hero-student.png" alt="Student" className={styles.heroImage} />
+            <img src="/hero image.png" alt="Student" className={styles.heroImage} />
+            
+            {/* Floating Badges */}
+            <div className={`${styles.floatingBadge} ${styles.badgeStudents}`}>
+              <div className={styles.badgeContent}>
+                <span className={styles.badgeNumber}>1000+</span>
+                <span className={styles.badgeLabel}>STUDENTS</span>
+              </div>
+            </div>
+
+            <div className={`${styles.floatingBadge} ${styles.badgeTrainers}`}>
+              <div className={styles.badgeIcon}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>
+              </div>
+              <div className={styles.badgeContent}>
+                <span className={styles.badgeTitle}>Expert</span>
+                <span className={styles.badgeSub}>TRAINERS</span>
+              </div>
+            </div>
           </div>
         </div>
 

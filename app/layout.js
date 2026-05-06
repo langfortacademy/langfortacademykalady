@@ -1,4 +1,9 @@
 import './globals.css';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
+import InteractiveBackground from './components/InteractiveBackground';
+import ScrollEffects from './components/ScrollEffects';
 
 export const metadata = {
   title: 'Langfort International Academy | Your Passport to Global Opportunities',
@@ -34,7 +39,14 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="theme-color" content="#0f2b5b" />
       </head>
-      <body>{children}</body>
+      <body>
+        <ScrollEffects />
+        <Navbar />
+        {children}
+        <Footer />
+        <WhatsAppButton />
+        <InteractiveBackground />
+      </body>
     </html>
   );
 }

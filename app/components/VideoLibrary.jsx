@@ -58,7 +58,7 @@ export default function VideoLibrary() {
   return (
     <section className={styles.section} id="videos" ref={sectionRef}>
       <div className="container">
-        <div className={`${styles.header} ${styles.animItem}`}>
+        <div className={`${styles.header} reveal reveal-up`}>
           <p className={styles.sectionLabel}>Student Voices</p>
           <h2 className="section-title">See It For Yourself</h2>
           <p className="section-subtitle">
@@ -78,7 +78,8 @@ export default function VideoLibrary() {
             {videos.map((video, i) => (
               <div
                 key={`group1-${video.id}-${i}`}
-                className={styles.videoCard}
+                className={`${styles.videoCard} reveal reveal-zoom`}
+                style={{ transitionDelay: `${i * 0.1}s` }}
             >
               <div className={styles.thumbnailWrap}>
                 <img
