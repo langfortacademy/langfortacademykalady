@@ -28,7 +28,7 @@ export default function Footer() {
           <div className={styles.footerBrand}>
             <div className={styles.logo}>
               <div className={styles.logoIcon}>
-                <img src="/logolangfort.png" alt="Langfort International Academy Logo" className={styles.logoImg} />
+                <img src="/logo white.png" alt="Langfort International Academy Logo" className={styles.logoImg} />
               </div>
               <div>
                 <div className={styles.logoName}>Langfort</div>
