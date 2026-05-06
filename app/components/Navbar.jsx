@@ -36,7 +36,19 @@ export default function Navbar() {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`} id="navbar">
       <div className={styles.navInner}>
-        {/* Logo (Left) */}
+        {/* Mobile Toggle (Now on the left) */}
+        <button
+          className={`${styles.hamburger} ${mobileOpen ? styles.hamburgerOpen : ''}`}
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle navigation menu"
+          id="mobile-menu-toggle"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        {/* Logo (Center-Left) */}
         <a href="#hero" className={styles.logo}>
           <img 
             src="/logo white.png" 
@@ -65,18 +77,6 @@ export default function Navbar() {
             Enroll Now
           </a>
         </div>
-
-        {/* Mobile Toggle */}
-        <button
-          className={`${styles.hamburger} ${mobileOpen ? styles.hamburgerOpen : ''}`}
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle navigation menu"
-          id="mobile-menu-toggle"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
 
       {/* Mobile Menu */}
