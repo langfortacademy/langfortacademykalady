@@ -374,19 +374,6 @@ input, textarea {
   animation: slideInRight 0.8s ease-out forwards;
 }
 
-/* --- Scroll Progress Bar --- */
-.scrollProgress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 4px;
-  background: linear-gradient(to right, #0f2b5b, #3b82f6);
-  z-index: 9999;
-  transition: width 0.1s ease-out;
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
-}
-
 /* --- Scroll Reveal Variants --- */
 .reveal {
   opacity: 0;
