@@ -68,6 +68,8 @@
   align-items: center;
   gap: var(--space-1);
   list-style: none;
+  flex: 1;
+  justify-content: center;
 }
 
 .navLink {
@@ -166,7 +168,7 @@
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--color-text-white);
+  background: var(--color-primary);
   border-radius: 2px;
   transition: all var(--transition-base);
   transform-origin: center;

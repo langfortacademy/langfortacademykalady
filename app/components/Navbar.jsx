@@ -36,6 +36,11 @@ export default function Navbar() {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`} id="navbar">
       <div className={styles.navInner}>
+        {/* Logo (Left) */}
+        <a href="#hero" className={styles.logo}>
+          <img src="/logo blue.png" alt="Langfort International Academy Logo" className={styles.logoIcon} />
+        </a>
+
         {/* Desktop Links */}
         <ul className={styles.navLinks}>
           {navLinks.map((link) => (
@@ -68,11 +73,6 @@ export default function Navbar() {
           <span></span>
           <span></span>
         </button>
-
-        {/* Logo (Moved to Top Right) */}
-        <a href="#hero" className={styles.logo}>
-          <img src="/logo blue.png" alt="Langfort International Academy Logo" className={styles.logoIcon} />
-        </a>
       </div>
 
       {/* Mobile Menu */}
