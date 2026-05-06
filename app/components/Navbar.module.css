@@ -37,7 +37,7 @@
 }
 
 .logoIcon {
-  height: 80px;
+  height: 120px;
   width: auto;
   flex-shrink: 0;
 }
@@ -259,6 +259,6 @@
 
 @media (max-width: 480px) {
   .logoIcon {
-    height: 56px;
+    height: 80px;
   }
 }
