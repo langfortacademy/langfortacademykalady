@@ -118,22 +118,34 @@
   font-size: var(--font-size-sm);
   padding: var(--space-2) var(--space-6);
   white-space: nowrap;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   color: var(--color-text-white);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
   border-radius: var(--radius-full);
   transition: all var(--transition-base);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 0 10px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+
+.scrolled .navLoginBtn {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background: rgba(15, 43, 91, 0.05);
 }
 
 .navLoginBtn:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.35);
   border-color: #ffffff;
   color: var(--color-text-white);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 0 15px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.scrolled .navLoginBtn:hover {
+  background: var(--color-primary);
+  color: white;
 }
 
 .navCta {
@@ -143,12 +155,28 @@
   background: #ffffff;
   color: var(--color-primary);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+  border: 1.5px solid #ffffff;
+  border-radius: var(--radius-full);
+}
+
+.scrolled .navCta {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
 }
 
 .navCta:hover {
-  background: #f8fafc;
-  color: var(--color-primary);
+  background: transparent;
+  color: #ffffff;
   transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+.scrolled .navCta:hover {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 /* Hamburger */
