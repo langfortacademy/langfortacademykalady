@@ -16,7 +16,7 @@ export default function Footer() {
     { label: 'IELTS Coaching', href: '#programs' },
     { label: 'OET Training', href: '#programs' },
     { label: 'PTE Preparation', href: '#programs' },
-    { label: 'German Language', href: '#programs' },
+    { label: 'German Language', href: '#programs', icon: <img src="/Flag_of_Germany.svg.png" alt="German Flag" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '4px' }} /> },
     { label: 'Spoken English', href: '#programs' },
   ];
 
@@ -38,6 +38,15 @@ export default function Footer() {
             <p className={styles.brandDesc}>
               Kerala&apos;s premier language academy offering world-class coaching for IELTS, OET, PTE, and German language programs.
             </p>
+
+            <div className={styles.branchesSection}>
+              <h5 className={styles.branchesTitle}>Our Branches</h5>
+              <ul className={styles.branchesList}>
+                <li>Kalady</li>
+                <li>Kaloor</li>
+                <li>Thodupuzha</li>
+              </ul>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -72,15 +81,6 @@ export default function Footer() {
               <p>Above Bank of Baroda, SNDP Building</p>
               <p>Near Kalady Panchayat, MC Road</p>
               <p>Kalady, Kerala, India</p>
-              
-              <div className={styles.branchesSection}>
-                <h5 className={styles.branchesTitle}>Our Branches</h5>
-                <ul className={styles.branchesList}>
-                  <li>Kalady</li>
-                  <li>Kaloor</li>
-                  <li>Thodupuzha</li>
-                </ul>
-              </div>
 
               <p><a href="tel:+919383448172">+91 9383448172</a></p>
               <p><a href="tel:+919048692086">+91 9048692086</a></p>

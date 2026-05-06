@@ -5,7 +5,7 @@ import styles from './CourseGrid.module.css';
 
 const courses = [
   {
-    icon: '🇩🇪',
+    icon: <img src="/Flag_of_Germany.svg.png" alt="German Flag" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '4px' }} />,
     title: 'German Language',
     subtitle: 'From A1 to Advanced Levels',
     description:
