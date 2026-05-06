@@ -38,7 +38,11 @@ export default function Navbar() {
       <div className={styles.navInner}>
         {/* Logo (Left) */}
         <a href="#hero" className={styles.logo}>
-          <img src="/logo blue.png" alt="Langfort International Academy Logo" className={styles.logoIcon} />
+          <img 
+            src={scrolled ? "/logo blue.png" : "/logo white.png"} 
+            alt="Langfort International Academy Logo" 
+            className={styles.logoIcon} 
+          />
         </a>
 
         {/* Desktop Links */}
