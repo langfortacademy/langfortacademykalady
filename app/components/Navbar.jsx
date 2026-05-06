@@ -71,7 +71,7 @@ export default function Navbar() {
 
         {/* Logo (Moved to Top Right) */}
         <a href="#hero" className={styles.logo}>
-          <img src="/logolangfort.png" alt="Langfort International Academy Logo" className={styles.logoIcon} />
+          <img src="/logo blue.png" alt="Langfort International Academy Logo" className={styles.logoIcon} />
         </a>
       </div>
 
