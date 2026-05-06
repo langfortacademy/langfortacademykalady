@@ -54,6 +54,36 @@ const courses = [
     color: '#0f2b5b',
     gradient: 'linear-gradient(135deg, #0f2b5b, #2563eb)',
   },
+  {
+    icon: '🦉',
+    title: 'Duolingo',
+    subtitle: 'Modern English Proficiency Test',
+    description:
+      'A fast, convenient, and cost-effective English test accepted by thousands of institutions globally. Get your results in just 48 hours with our specialized prep classes.',
+    features: ['Results in 48 Hours', 'Take Anywhere', 'Worldwide Acceptance', 'Mock Interviews'],
+    color: '#0f2b5b',
+    gradient: 'linear-gradient(135deg, #0f2b5b, #2563eb)',
+  },
+  {
+    icon: '🇨🇦',
+    title: 'CELPIP',
+    subtitle: 'Canadian English Proficiency Index',
+    description:
+      'The essential test for Canadian permanent residency and citizenship. Our training focuses on the Canadian context and computer-based test formats.',
+    features: ['IRCC Approved', 'Canadian Accent Prep', 'Computer-Based Labs', 'Express Entry Path'],
+    color: '#0f2b5b',
+    gradient: 'linear-gradient(135deg, #0f2b5b, #2563eb)',
+  },
+  {
+    icon: '🎓',
+    title: 'TOEFL',
+    subtitle: 'Test of English as a Foreign Language',
+    description:
+      'The most widely respected academic English-language test globally. Master the iBT format with our comprehensive training and expert strategies.',
+    features: ['Academic English', 'iBT Preparation', 'University Pathways', 'Expert Feedback'],
+    color: '#0f2b5b',
+    gradient: 'linear-gradient(135deg, #0f2b5b, #2563eb)',
+  },
 ];
 
 export default function CourseGrid() {
