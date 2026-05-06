@@ -10,11 +10,10 @@
 }
 
 .scrolled {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(15, 43, 91, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: var(--space-2) 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .navInner {
@@ -83,7 +82,7 @@
 }
 
 .scrolled .navLink {
-  color: var(--color-primary);
+  color: #ffffff;
 }
 
 .navLink::after {
@@ -130,8 +129,8 @@
 }
 
 .scrolled .navLoginBtn {
-  color: var(--color-primary);
-  border-color: var(--color-primary);
+  color: #ffffff;
+  border-color: #ffffff;
   background: transparent;
 }
 
@@ -162,9 +161,9 @@
 }
 
 .scrolled .navCta {
-  background: var(--color-primary);
-  color: #ffffff;
-  border-color: var(--color-primary);
+  background: #ffffff;
+  color: var(--color-primary);
+  border-color: #ffffff;
 }
 
 .navCta:hover {
@@ -176,8 +175,8 @@
 
 .scrolled .navCta:hover {
   background: transparent;
-  color: var(--color-primary);
-  border-color: var(--color-primary);
+  color: #ffffff;
+  border-color: #ffffff;
 }
 
 /* Hamburger */

@@ -39,7 +39,7 @@ export default function Navbar() {
         {/* Logo (Left) */}
         <a href="#hero" className={styles.logo}>
           <img 
-            src={scrolled ? "/logo blue.png" : "/logo white.png"} 
+            src="/logo white.png" 
             alt="Langfort International Academy Logo" 
             className={styles.logoIcon} 
           />
