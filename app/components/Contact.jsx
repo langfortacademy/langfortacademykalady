@@ -61,7 +61,7 @@ export default function Contact() {
       <div className={styles.bgDecor2}></div>
 
       <div className="container">
-        <div className="reveal">
+        <div className="reveal reveal-up">
           <p className={styles.sectionLabel}>Get In Touch</p>
           <h2 className="section-title">
             Start Your Journey Today
@@ -73,7 +73,7 @@ export default function Contact() {
 
         <div className={styles.grid}>
           {/* Form */}
-          <div className={`${styles.formCard} reveal`}>
+          <div className={`${styles.formCard} reveal reveal-left`}>
             {submitted ? (
               <div className={styles.successMsg}>
                 <div className={styles.successIcon}>✓</div>
@@ -92,7 +92,6 @@ export default function Contact() {
                       value={formData.firstName}
                       onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                       required
-                      placeholder="John"
                     />
                   </div>
                   <div className={styles.formGroup}>
@@ -104,7 +103,6 @@ export default function Contact() {
                       value={formData.lastName}
                       onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                       required
-                      placeholder="Doe"
                     />
                   </div>
                 </div>
@@ -117,7 +115,6 @@ export default function Contact() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
-                    placeholder="john@example.com"
                   />
                 </div>
                 <div className={styles.formGroup}>
@@ -129,7 +126,6 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     required
-                    placeholder="+91 9383448172"
                   />
                 </div>
                 <button type="submit" className={`btn btn-primary btn-lg ${styles.submitBtn}`}>
@@ -144,7 +140,7 @@ export default function Contact() {
           </div>
 
           {/* Info */}
-          <div className={`${styles.infoCard} reveal`} style={{ transitionDelay: '0.15s' }}>
+          <div className={`${styles.infoCard} reveal reveal-right`} style={{ transitionDelay: '0.15s' }}>
             <h3 className={styles.infoTitle}>Contact Information</h3>
             <p className={styles.infoSubtitle}>
               Reach out to us through any of the following channels.
