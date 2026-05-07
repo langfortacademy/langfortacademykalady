@@ -10,6 +10,7 @@ export default function Contact() {
     lastName: '',
     email: '',
     phone: '',
+    website: '', // Honeypot field
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -36,6 +37,14 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
+    // Honeypot check: If the hidden field is filled, it's a bot
+    if (formData.website) {
+      console.warn('Bot detected');
+      setSubmitted(true); // Simulate success to the bot
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       // 1. Send data to Google Sheets
@@ -151,6 +160,19 @@ export default function Contact() {
                     required
                   />
                 </div>
+
+                {/* Honeypot field (hidden from users) */}
+                <div className={styles.hp} aria-hidden="true">
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex="-1"
+                    autoComplete="off"
+                    value={formData.website}
+                    onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                  />
+                </div>
+
                 <button 
                   type="submit" 
                   className={`btn btn-primary btn-lg ${styles.submitBtn}`}

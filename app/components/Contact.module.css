@@ -103,6 +103,13 @@
   margin-top: var(--space-2);
 }
 
+.hp {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* Success */
 .successMsg {
   display: flex;
