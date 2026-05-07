@@ -31,19 +31,40 @@ export default function Contact() {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     try {
-      // Prepare WhatsApp message
+      // 1. Send data to Google Sheets
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbzBVqUSb-pMkM06ZBK7GKqYdSsvPvJyOfudTL8tfo5L70lK9OpQ_DL6iYZjsprPv45pyg/exec';
+      
+      // We use a clean form data object to ensure compatibility with Apps Script
+      const formDataToSubmit = new URLSearchParams();
+      formDataToSubmit.append('First Name', formData.firstName);
+      formDataToSubmit.append('Last Name', formData.lastName);
+      formDataToSubmit.append('Email', formData.email);
+      formDataToSubmit.append('Phone', formData.phone);
+      formDataToSubmit.append('Date', new Date().toLocaleString());
+
+      // Fire and forget (or wait briefly) to ensure the sheet is updated
+      fetch(scriptUrl, {
+        method: 'POST',
+        mode: 'no-cors', // Essential for Google Apps Script redirects
+        body: formDataToSubmit,
+      }).catch(err => console.error('Sheet Sync Error:', err));
+
+      // 2. Prepare and trigger WhatsApp message
       const waNumber = '919383448172';
       const waMessage = `Hello Langfort Academy!%0A%0AI would like to start my journey. Here are my details:%0A%0A*Name:* ${formData.firstName} ${formData.lastName}%0A*Email:* ${formData.email}%0A*Phone:* ${formData.phone}`;
       const waLink = `https://wa.me/${waNumber}?text=${waMessage}`;
 
-      // Redirect to WhatsApp
+      // Open WhatsApp in a new tab
       window.open(waLink, '_blank');
 
-      // Show success state briefly
+      // 3. Update local state
       setSubmitted(true);
       setFormData({ firstName: '', lastName: '', email: '', phone: '' });
       
@@ -52,6 +73,8 @@ export default function Contact() {
     } catch (error) {
       console.error('Error submitting form:', error);
       alert('There was an error submitting your details. Please try again or contact us directly on WhatsApp.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -128,8 +151,12 @@ export default function Contact() {
                     required
                   />
                 </div>
-                <button type="submit" className={`btn btn-primary btn-lg ${styles.submitBtn}`}>
-                  Send Message
+                <button 
+                  type="submit" 
+                  className={`btn btn-primary btn-lg ${styles.submitBtn}`}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="22" y1="2" x2="11" y2="13" />
                     <polygon points="22 2 15 22 11 13 2 9 22 2" />
