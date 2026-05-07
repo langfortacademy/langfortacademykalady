@@ -12,9 +12,9 @@ export const metadata = {
   keywords: 'IELTS, OET, PTE, German Language, English Courses, Study Abroad, Langfort Academy, Kalady, Kerala',
   authors: [{ name: 'Langfort International Academy' }],
   icons: {
-    icon: '/favicon.png',
-    shortcut: '/favicon.png',
-    apple: '/favicon.png',
+    icon: '/new_favicon.png',
+    shortcut: '/new_favicon.png',
+    apple: '/new_favicon.png',
   },
   manifest: '/site.webmanifest',
   appleWebApp: {
@@ -43,7 +43,7 @@ export default function RootLayout({ children }) {
     "@type": "EducationalOrganization",
     "name": "Langfort International Academy",
     "url": "https://langfortacademy.online/",
-    "logo": "https://langfortacademy.online/favicon.png",
+    "logo": "https://langfortacademy.online/new_favicon.png",
     "description": "Kerala's premier language academy offering world-class coaching for IELTS, OET, PTE, and German language programs.",
     "address": {
       "@type": "PostalAddress",
