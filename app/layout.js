@@ -32,12 +32,45 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Langfort International Academy",
+    "url": "https://langfortacademy.online/",
+    "logo": "https://langfortacademy.online/logolangfort.png",
+    "description": "Kerala's premier language academy offering world-class coaching for IELTS, OET, PTE, and German language programs.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Above Bank of Baroda, SNDP Building, Near Kalady Panchayat, MC Road",
+      "addressLocality": "Kalady",
+      "addressRegion": "Kerala",
+      "postalCode": "683574",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9383448172",
+      "contactType": "admissions",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Malayalam", "German"]
+    },
+    "sameAs": [
+      "https://www.youtube.com/@LangfortInternationalAcademy",
+      "https://wa.me/919383448172"
+    ]
+  };
+
   return (
     <html lang="en-IN">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="canonical" href="https://langfortacademy.online/" />
         <meta name="theme-color" content="#0f2b5b" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body>
         <ScrollEffects />
