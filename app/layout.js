@@ -16,6 +16,12 @@ export const metadata = {
     shortcut: '/favicon.png',
     apple: '/favicon.png',
   },
+  manifest: '/site.webmanifest',
+  appleWebApp: {
+    title: 'Langfort Academy',
+    statusBarStyle: 'default',
+    capable: true,
+  },
   openGraph: {
     title: 'Langfort International Academy',
     description: 'One-stop solution for all your international study needs.',
