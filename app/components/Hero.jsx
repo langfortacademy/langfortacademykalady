@@ -68,7 +68,7 @@ export default function Hero() {
             <h1 className={`${styles.headline} ${styles.animItem}`}>
               Empower Your <br />
               <span className={styles.headlineHighlight}>Future</span> <br />
-              With Langfort.
+              With LangFort.
             </h1>
 
             <p className={`${styles.subheadline} ${styles.animItem}`}>
@@ -174,7 +174,7 @@ export default function Hero() {
                 width="100%"
                 height="100%"
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-                title="Langfort Orientation Video"
+                title="LangFort Orientation Video"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
