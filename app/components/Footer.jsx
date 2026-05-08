@@ -31,7 +31,7 @@ export default function Footer() {
                 <img src="/logo white.png" alt="Langfort International Academy Logo" className={styles.logoImg} />
               </div>
               <div>
-                <div className={styles.logoName}>Langfort</div>
+                <div className={styles.logoName}>LangFort</div>
                 <div className={styles.logoTag}>International Academy</div>
               </div>
             </div>
@@ -91,7 +91,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className={styles.bottomBar}>
-          <p>&copy; {currentYear} Langfort International Academy. All rights reserved.</p>
+          <p>&copy; {currentYear} LangFort International Academy. All rights reserved.</p>
           <p className={styles.madeWith}>
             <a href="https://wa.me/+919188840291/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
               Made with CREON

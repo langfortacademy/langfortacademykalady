@@ -52,7 +52,7 @@ export default function Navbar() {
         <a href="#hero" className={styles.logo}>
           <img 
             src="/logo white.png" 
-            alt="Langfort International Academy Logo" 
+            alt="LangFort International Academy Logo" 
             className={styles.logoIcon} 
           />
         </a>

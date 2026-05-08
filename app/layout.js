@@ -6,7 +6,7 @@ import InteractiveBackground from './components/InteractiveBackground';
 import ScrollEffects from './components/ScrollEffects';
 
 export const metadata = {
-  title: 'Langfort International Academy | Your Passport to Global Opportunities',
+  title: 'LangFort International Academy | Your Passport to Global Opportunities',
   description:
     'Langfort International Academy, located at Kalady, Ernakulam, is one of the leading institutes in India offering IELTS, OET, PTE, and German Language courses for study, work, and migration.',
   keywords: 'IELTS, OET, PTE, German Language, English Courses, Study Abroad, Langfort Academy, Kalady, Kerala',
