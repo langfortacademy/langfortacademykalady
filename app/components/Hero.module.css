@@ -605,8 +605,8 @@
 }
 
 /* Remove grid on mobile only */
-@media (max-width: 768px) {
-  [class*="bgGrid"] {
+@media (max-width: 1024px) {
+  .bgGrid {
     display: none !important;
   }
 }
