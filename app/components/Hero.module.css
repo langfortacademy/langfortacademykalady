@@ -603,3 +603,10 @@
   from { transform: scaleX(1); }
   to { transform: scaleX(0); }
 }
+
+/* Remove grid on mobile only */
+@media (max-width: 768px) {
+  [class*="bgGrid"] {
+    display: none !important;
+  }
+}
