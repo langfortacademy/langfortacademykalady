@@ -10,6 +10,7 @@ export default function Contact() {
     lastName: '',
     email: '',
     phone: '',
+    course: 'IELTS Coaching',
     website: '', // Honeypot field
   });
   const [submitted, setSubmitted] = useState(false);
@@ -56,6 +57,7 @@ export default function Contact() {
       formDataToSubmit.append('Last Name', formData.lastName);
       formDataToSubmit.append('Email', formData.email);
       formDataToSubmit.append('Phone', formData.phone);
+      formDataToSubmit.append('Course', formData.course);
       formDataToSubmit.append('Date', new Date().toLocaleString());
 
       // Fire and forget (or wait briefly) to ensure the sheet is updated
@@ -67,7 +69,7 @@ export default function Contact() {
 
       // 2. Prepare and trigger WhatsApp message
       const waNumber = '919383448172';
-      const waMessage = `Hello Langfort Academy!%0A%0AI would like to start my journey. Here are my details:%0A%0A*Name:* ${formData.firstName} ${formData.lastName}%0A*Email:* ${formData.email}%0A*Phone:* ${formData.phone}`;
+      const waMessage = `Hello LangFort Academy!%0A%0AI would like to start my journey. Here are my details:%0A%0A*Name:* ${formData.firstName} ${formData.lastName}%0A*Email:* ${formData.email}%0A*Phone:* ${formData.phone}%0A*Interested Course:* ${formData.course}`;
       const waLink = `https://wa.me/${waNumber}?text=${waMessage}`;
 
       // Open WhatsApp in a new tab
@@ -75,7 +77,7 @@ export default function Contact() {
 
       // 3. Update local state
       setSubmitted(true);
-      setFormData({ firstName: '', lastName: '', email: '', phone: '' });
+      setFormData({ firstName: '', lastName: '', email: '', phone: '', course: 'IELTS Coaching', website: '' });
       
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitted(false), 5000);
@@ -159,6 +161,23 @@ export default function Contact() {
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     required
                   />
+                </div>
+
+                <div className={styles.formGroup}>
+                  <label htmlFor="course" className={styles.label}>Interested Course</label>
+                  <select
+                    id="course"
+                    className={styles.input}
+                    value={formData.course}
+                    onChange={(e) => setFormData({ ...formData, course: e.target.value })}
+                    required
+                  >
+                    <option value="IELTS Coaching">IELTS Coaching</option>
+                    <option value="OET Training">OET Training</option>
+                    <option value="PTE Preparation">PTE Preparation</option>
+                    <option value="German Language">German Language</option>
+                    <option value="Spoken English">Spoken English</option>
+                  </select>
                 </div>
 
                 {/* Honeypot field (hidden from users) */}
