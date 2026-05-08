@@ -45,6 +45,15 @@ export default function Hero() {
     };
   }, []);
 
+  useEffect(() => {
+    if (isVideoModalOpen) {
+      const timer = setTimeout(() => {
+        setIsVideoModalOpen(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [isVideoModalOpen]);
+
   return (
     <>
       <section className={styles.hero} id="hero" ref={heroRef}>
@@ -169,16 +178,22 @@ export default function Hero() {
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             </button>
-            <div className={styles.videoWrapper}>
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-                title="LangFort Orientation Video"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+            <div className={styles.videoWrapper} style={{ paddingBottom: '0', height: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f8fafc' }}>
+              <div className={styles.comingSoonContainer}>
+                <div className={styles.comingSoonIcon}>
+                  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                </div>
+                <h2 className={styles.comingSoonTitle}>Coming Soon</h2>
+                <p className={styles.comingSoonText}>
+                  Our orientation class video is currently in production and will be available very soon.
+                </p>
+                <div className={styles.comingSoonProgress}>
+                  <div className={styles.progressLine}></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
