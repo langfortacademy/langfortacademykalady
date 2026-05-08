@@ -71,17 +71,6 @@
 .cloud3::before { width: 250px; height: 250px; top: -100px; left: 80px; }
 .cloud3::after { width: 180px; height: 180px; top: -80px; right: 80px; }
 
-/* Grid overlay - Light Theme */
-.bgGrid {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image: 
-    linear-gradient(rgba(15, 43, 91, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 43, 91, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-
 /* Content */
 .heroContainer {
   position: relative;
@@ -604,9 +593,4 @@
   to { transform: scaleX(0); }
 }
 
-/* Remove grid on mobile only */
-@media (max-width: 1024px) {
-  .bgGrid {
-    display: none !important;
-  }
-}
+
