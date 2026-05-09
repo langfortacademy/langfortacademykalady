@@ -229,7 +229,7 @@
   left: 0;
   width: 100%;
   height: 100dvh;
-  background: rgba(15, 43, 91, 0.85); /* Semi-transparent Navy Blue */
+  background: rgba(15, 43, 91, 0.98); /* Solid Navy Blue */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   display: flex;

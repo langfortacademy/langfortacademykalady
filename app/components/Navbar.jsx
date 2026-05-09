@@ -93,16 +93,18 @@ export default function Navbar() {
               </a>
             </li>
           ))}
-          <li style={{ animationDelay: `${navLinks.length * 0.06}s`, display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', marginTop: '1rem' }}>
+          <li key="student-login" style={{ animationDelay: `${navLinks.length * 0.06}s` }}>
             <a
               href="https://student.langfortacademy.online"
               target="_blank"
               rel="noopener noreferrer"
-              className={`btn btn-secondary ${styles.mobileCta}`}
+              className={styles.mobileLink}
               onClick={() => setMobileOpen(false)}
             >
               Student Login
             </a>
+          </li>
+          <li style={{ animationDelay: `${(navLinks.length + 1) * 0.06}s`, marginTop: '1.5rem' }}>
             <a
               href="#contact"
               className={`btn btn-primary ${styles.mobileCta}`}
