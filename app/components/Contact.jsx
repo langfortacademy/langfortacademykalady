@@ -49,7 +49,7 @@ export default function Contact() {
 
     try {
       // 1. Send data to Google Sheets
-      const scriptUrl = 'https://script.google.com/macros/s/AKfycbzBVqUSb-pMkM06ZBK7GKqYdSsvPvJyOfudTL8tfo5L70lK9OpQ_DL6iYZjsprPv45pyg/exec';
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbzyb16AMtRD5s7_f7d_ukS-d0M3YNh0ZRKrmUgjAP-05Ggp9mSNPSr00mo6AmwaOwoiQQ/exec';
       
       // We use a clean form data object to ensure compatibility with Apps Script
       const formDataToSubmit = new URLSearchParams();
