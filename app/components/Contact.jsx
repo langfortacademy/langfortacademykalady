@@ -241,7 +241,7 @@ export default function Contact() {
                   <p className={styles.infoText}>
                     <a href="tel:+919383448172">+91 9383448172</a>
                     <br />
-                    <a href="tel:+919048692086">+91 9048692086</a>
+                    <a href="tel:+917736036076">+91 7736036076</a>
                   </p>
                 </div>
               </div>
