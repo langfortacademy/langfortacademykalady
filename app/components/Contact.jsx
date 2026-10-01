@@ -240,8 +240,6 @@ export default function Contact() {
                   <h4 className={styles.infoLabel}>Phone</h4>
                   <p className={styles.infoText}>
                     <a href="tel:+919383448172">+91 9383448172</a>
-                    <br />
-                    <a href="tel:+917736036076">+91 7736036076</a>
                   </p>
                 </div>
               </div>

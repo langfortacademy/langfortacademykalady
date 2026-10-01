@@ -83,7 +83,6 @@ export default function Footer() {
               <p>Kalady, Kerala, India</p>
 
               <p><a href="tel:+919383448172">+91 9383448172</a></p>
-              <p><a href="tel:+917736036076">+91 7736036076</a></p>
               <p><a href="mailto:langfortacademy@gmail.com">langfortacademy@gmail.com</a></p>
             </div>
           </div>
