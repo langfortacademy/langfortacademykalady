@@ -4,10 +4,16 @@ import { useEffect, useRef } from 'react';
 import styles from './AuPairBanner.module.css';
 
 const features = [
-  { icon: '🌍', text: 'Work & Live in Germany' },
-  { icon: '👨‍👩‍👧', text: 'Host Family Matching' },
-  { icon: '🗣️', text: 'German Language Ready' },
-  { icon: '📋', text: 'Visa Guidance Included' },
+  { icon: '🇩🇪', text: 'Genuine Host Family Matching' },
+  { icon: '👩‍👧', text: 'Profile Registration & Screening' },
+  { icon: '🎥', text: 'Host Family Interview Coordination' },
+  { icon: '📄', text: 'Contract & Documentation Support' },
+  { icon: '🛂', text: 'Visa Guidance' },
+  { icon: '✈️', text: 'Travel & Departure Assistance' },
+  { icon: '🗣️', text: 'Language & Cultural Preparation' },
+  { icon: '🏡', text: 'Arrival & Accommodation Support' },
+  { icon: '🤝', text: 'Ongoing Au Pair & Host Family Support' },
+  { icon: '🔄', text: 'Rematch & Extension Assistance' },
 ];
 
 export default function AuPairBanner() {
@@ -47,7 +53,7 @@ export default function AuPairBanner() {
           {/* Label */}
           <p className={styles.label}>
             <span className={styles.labelDot} />
-            Au Pair Services
+            Our Au Pair Services
           </p>
 
           {/* Heading */}
