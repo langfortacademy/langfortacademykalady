@@ -1,0 +1,229 @@
+/* ===== AU PAIR BANNER — matches site design system ===== */
+
+.section {
+  padding: var(--space-20) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative background blobs — mirrors Hero orb style */
+.bgOrbs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.12;
+}
+
+.orb1 {
+  width: 400px;
+  height: 400px;
+  background: var(--color-secondary);
+  top: -100px;
+  right: -100px;
+}
+
+.orb2 {
+  width: 300px;
+  height: 300px;
+  background: var(--color-primary);
+  bottom: -80px;
+  left: -80px;
+}
+
+/* Inner card — glassmorphism consistent with .glass-card-dark */
+.card {
+  position: relative;
+  z-index: 1;
+  background: var(--color-surface-glass-light);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  padding: var(--space-16) var(--space-12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-6);
+  overflow: hidden;
+}
+
+/* Top accent stripe — mirrors .cardAccent in CourseGrid */
+.cardAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-cta);
+}
+
+/* Badge label — mirrors .sectionLabel in CourseGrid */
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.labelDot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-secondary);
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Heading */
+.heading {
+  font-size: var(--font-size-4xl);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-primary);
+  line-height: 1.15;
+  max-width: 700px;
+}
+
+.headingHighlight {
+  background: var(--gradient-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Description */
+.desc {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  line-height: 1.75;
+  max-width: 640px;
+}
+
+/* Feature pills row — mirrors .feature in CourseGrid */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+  list-style: none;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-primary);
+  background: var(--color-bg-dark);
+  border: 1px solid var(--color-border-light);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+}
+
+/* CTA Button — extends global .btn .btn-primary styling with arrow animation */
+.ctaWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-10);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  background: var(--gradient-cta);
+  color: #fff;
+  box-shadow: var(--shadow-glow-accent);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: -0.01em;
+}
+
+.cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.15), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(15, 43, 91, 0.35);
+}
+
+.cta:hover::after {
+  opacity: 1;
+}
+
+.cta:hover .ctaArrow {
+  transform: translateX(5px);
+}
+
+.ctaArrow {
+  transition: transform var(--transition-base);
+}
+
+.ctaNote {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+  letter-spacing: 0.02em;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .heading {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: var(--space-12) var(--space-6);
+    gap: var(--space-5);
+  }
+
+  .heading {
+    font-size: var(--font-size-2xl);
+  }
+
+  .desc {
+    font-size: var(--font-size-base);
+  }
+
+  .cta {
+    padding: var(--space-3) var(--space-8);
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: var(--font-size-xl);
+  }
+
+  .pills {
+    gap: var(--space-2);
+  }
+}
