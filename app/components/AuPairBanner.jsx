@@ -99,9 +99,6 @@ export default function AuPairBanner() {
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
-            <span className={styles.ctaNote}>
-              Official Au Pair placement platform — opens in new tab
-            </span>
           </div>
         </div>
       </div>
