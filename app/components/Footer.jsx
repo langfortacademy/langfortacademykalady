@@ -28,7 +28,7 @@ export default function Footer() {
           <div className={styles.footerBrand}>
             <div className={styles.logo}>
               <div className={styles.logoIcon}>
-                <img src="/logo white.png" alt="Langfort International Academy Logo" className={styles.logoImg} />
+                <img src="/new_logo_white-png.png" alt="Langfort International Academy Logo" className={styles.logoImg} />
               </div>
               <div>
                 <div className={styles.logoName}>LangFort</div>
@@ -77,7 +77,7 @@ export default function Footer() {
           <div className={styles.footerCol}>
             <h4 className={styles.colTitle}>Contact</h4>
             <div className={styles.contactInfo}>
-              <p>LangFort Global Education Pvt. Ltd.</p>
+              <p>LangFort Global Education LLP</p>
               <p>Above Bank of Baroda, SNDP Building</p>
               <p>Near Kalady Panchayat, MC Road</p>
               <p>Kalady, Kerala, India</p>

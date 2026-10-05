@@ -8,7 +8,7 @@ const testimonials = [
   {
     name: 'Arya Haridas',
     role: 'IELTS Student',
-    text: 'I am extremely grateful to LangFort Global Education Pvt. Ltd. for their excellent guidance and support throughout my IELTS preparation journey. The training was well-structured, focused, and truly effective.',
+    text: 'I am extremely grateful to LangFort Global Education LLP for their excellent guidance and support throughout my IELTS preparation journey. The training was well-structured, focused, and truly effective.',
     rating: 5,
   },
   {

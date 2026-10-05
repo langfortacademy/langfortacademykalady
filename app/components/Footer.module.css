@@ -30,7 +30,7 @@
 }
 
 .logoImg {
-  height: 48px;
+  height: 58px;
   width: auto;
   filter: brightness(0) invert(1); /* Make the logo white to contrast against the dark blue footer */
 }

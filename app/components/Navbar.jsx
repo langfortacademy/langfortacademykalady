@@ -51,7 +51,7 @@ export default function Navbar() {
         {/* Logo (Center-Left) */}
         <a href="#hero" className={styles.logo}>
           <img 
-            src="/logo white.png" 
+            src="/new_logo_white-png.png" 
             alt="LangFort International Academy Logo" 
             className={styles.logoIcon} 
           />
