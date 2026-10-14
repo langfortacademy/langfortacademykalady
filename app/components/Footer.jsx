@@ -40,11 +40,9 @@ export default function Footer() {
             </p>
 
             <div className={styles.branchesSection}>
-              <h5 className={styles.branchesTitle}>Our Branches</h5>
+              <h5 className={styles.branchesTitle}>Our Branch</h5>
               <ul className={styles.branchesList}>
                 <li>Kalady</li>
-                <li>Kaloor</li>
-                <li>Thodupuzha</li>
               </ul>
             </div>
           </div>
