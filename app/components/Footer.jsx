@@ -91,7 +91,7 @@ export default function Footer() {
           <p>&copy; {currentYear} LangFort International Academy. All rights reserved.</p>
           <p className={styles.madeWith}>
             <a href="https://wa.me/+919188840291/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
-              Made with CREON
+              Made with ANWEO
             </a>
           </p>
         </div>

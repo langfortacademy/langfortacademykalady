@@ -64,9 +64,7 @@ export default function AuPairBanner() {
 
           {/* Description */}
           <p className={styles.desc}>
-            LangFort Academy partners with <strong>AuPair.com</strong> to help aspiring au pairs
-            prepare with the right German language skills, documentation guidance, and cultural
-            readiness. Take the first step towards your international journey today.
+            At LangFort Global Education LLP, we help aspiring Au Pairs take their first step towards an exciting cultural exchange experience in Germany. Our Au Pair programme offers young individuals the opportunity to live with a host family, support them in childcare, improve their German language skills, and experience German culture and everyday life.
           </p>
 
           {/* Feature pills */}
@@ -78,34 +76,6 @@ export default function AuPairBanner() {
               </li>
             ))}
           </ul>
-
-          {/* CTA */}
-          <div className={styles.ctaWrap}>
-            <a
-              href="https://www.aupair.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.cta}
-              id="aupair-com-link"
-              aria-label="Visit AuPair.com — official au pair placement platform"
-            >
-              <span>Visit AuPair.com</span>
-              <svg
-                className={styles.ctaArrow}
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
         </div>
       </div>
     </section>
